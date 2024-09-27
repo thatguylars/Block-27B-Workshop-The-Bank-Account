@@ -4,7 +4,7 @@ In this workshop, you will be implementing a simple bank account application. A 
 
 ## Getting Started
 
-1. Fork the repository and add your cohort team.
+1. Create a new repository using this one as a template.
 2. Clone the repository down and install the dependencies.
 3. This workshop is built using Vite; use `npm run dev` to start the application.
 4. You should see a barebones banking interface. However, none of the buttons will work yet.
@@ -12,8 +12,6 @@ In this workshop, you will be implementing a simple bank account application. A 
 ## Instructions
 
 Most of the UI has already been written for you. Your job is to complete the missing code as indicated by the `TODO` comments. Most of what you will be writing involves working with Redux Toolkit.
-
-While you can write the code in any order you'd like, we recommend following the steps below:
 
 1. Complete the slice defined in `transactionsSlice.js`.
 2. Configure the store to use that slice in `store.js`.
@@ -36,4 +34,4 @@ If you're done early, try adding some of the following features:
 
 ## Submission
 
-Please submit a link to your Github repository.
+Please submit a link to your GitHub repository.
