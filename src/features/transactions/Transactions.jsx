@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { transfer } from "./transactionsSlice";
 import "./transactions.scss";
 
 /**
@@ -10,6 +11,7 @@ export default function Transactions() {
   const balance = 0;
 
   const [amountStr, setAmountStr] = useState("0.00");
+  const [recipient, setRecipient] = useState("");
 
   /** Dispatches a transaction action based on the form submission. */
   const onTransaction = (e) => {
@@ -22,6 +24,11 @@ export default function Transactions() {
     const amount = +amountStr;
 
     // TODO: Dispatch the appropriate transaction action based on `action`
+    if (action === "transfer") {
+      // The `transfer` action is dispatched with a payload containing
+      // the amount and the recipient.
+      dispatch(transfer({ amount, recipient }));
+    }
   };
 
   return (
@@ -54,7 +61,12 @@ export default function Transactions() {
         <div className="form-row">
           <label>
             Transfer to
-            <input type="text" placeholder="Recipient Name" name="recipient" />
+            <input
+              placeholder="Recipient Name"
+              name="recipient"
+              value={recipient}
+              onChange={(e) => setRecipient(e.target.value)}
+            />
           </label>
           <button name="transfer">Transfer</button>
         </div>
